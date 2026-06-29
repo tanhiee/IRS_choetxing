@@ -1,0 +1,9 @@
+attacker,defender,reward,ttr,peak_compromised,end_clean_pct,wasted_restores,successful_restores
+Rule-based Attacker,GNN-Belief Recurrent PPO (Ours),-54945.94,200.0,6.0,0.0,0.0,0.0
+Rule-based Attacker,Legacy Recurrent PPO,3976.25,7.45,2.5,80.0,3.45,26.9
+Rule-based Attacker,Legacy MLP PPO,-2236.74,14.5,2.9,50.0,2.55,27.75
+Rule-based Attacker,Static Playbook,4596.05,9.05,2.5,90.0,0.0,27.6
+RL Attacker (Adversarial),GNN-Belief Recurrent PPO (Ours),-2606.62,200.0,1.0,0.0,0.0,0.0
+RL Attacker (Adversarial),Legacy Recurrent PPO,4970.7,5.35,0.6,100.0,1.25,1.25
+RL Attacker (Adversarial),Legacy MLP PPO,5285.75,5.5,0.25,100.0,0.05,1.35
+RL Attacker (Adversarial),Static Playbook,5163.71,6.45,1.0,100.0,0.0,1.3

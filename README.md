@@ -52,7 +52,7 @@ Dự án xây dựng một **Blue Team Agent** tự động học cách ứng ph
 
 ---
 
-## 🏗️ Kiến trúc hệ thống
+## Kiến trúc hệ thống
 
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -92,7 +92,7 @@ train_rppo.py  ──►  rppo_irs_final.zip
 
 ---
 
-## 📁 Cấu trúc thư mục
+## Cấu trúc thư mục
 
 ```
 IRS-Project/
@@ -141,56 +141,7 @@ IRS-Project/
         └── ...
 ```
 
----
-
-## ⚙️ Cài đặt
-
-### Yêu cầu hệ thống
-- Python **3.10+**
-- pip
-- (Tuỳ chọn) GPU với CUDA để train nhanh hơn
-
-### Bước 1: Clone repository
-
-```bash
-git clone https://github.com/<username>/IRS-Project.git
-cd IRS-Project
-```
-
-### Bước 2: Tạo môi trường ảo (khuyến nghị)
-
-```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
-
-# Linux / macOS
-python -m venv venv
-source venv/bin/activate
-```
-
-### Bước 3: Cài đặt dependencies
-
-```bash
-pip install -r requirements.txt
-pip install streamlit plotly pyvis
-```
-
-> **Nội dung `requirements.txt`:**
-> ```
-> stable-baselines3>=2.0
-> sb3-contrib>=2.0        ← RecurrentPPO
-> gymnasium>=0.29
-> torch>=2.0
-> matplotlib>=3.7
-> pandas>=2.0
-> numpy>=1.24
-> tensorboard>=2.13
-> ```
-
----
-
-## 🚀 Chạy nhanh
+## Chạy nhanh
 
 ### Mở Dashboard (đã có model sẵn)
 
@@ -209,9 +160,9 @@ Dashboard sẽ tự động đọc:
 
 ---
 
-## 📖 Hướng dẫn chi tiết
+##  Hướng dẫn chi tiết
 
-### 1️⃣ Train model từ đầu
+### Train model từ đầu
 
 ```bash
 # Train đầy đủ (500,000 timesteps, ~30 phút trên CPU)
@@ -233,7 +184,7 @@ logs/rppo_training_rewards.csv   ← Dữ liệu vẽ training curve
 
 ---
 
-### 2️⃣ Đánh giá model
+### Đánh giá model
 
 ```bash
 # Đánh giá mặc định (50 episodes — RPPO vs Static Playbook)
@@ -264,17 +215,17 @@ Episodes Ended Clean (%)            94.0%
 
 ---
 
-### 3️⃣ Sử dụng Live Simulation (Tab 3 trong Dashboard)
+###  Sử dụng Live Simulation (Tab 3 trong Dashboard)
 
 1. Vào sidebar → chọn **Model checkpoint** (Last / Best / Adversarial)
-2. Nhấn **🔌 Load Model**
-3. Nhấn **▶️ Start** → agent tự chạy từng bước
+2. Nhấn **Load Model**
+3. Nhấn **Start** → agent tự chạy từng bước
 4. Theo dõi đồ thị mạng, log SIEM và các metric theo thời gian thực
-5. Nhấn **⏸️ Pause** hoặc **🔄 Reset Episode** tuỳ ý
+5. Nhấn **Pause** hoặc **Reset Episode** tuỳ ý
 
 ---
 
-### 4️⃣ Train adversarial (nâng cao)
+### Train adversarial (nâng cao)
 
 ```bash
 # Train với Red agent thông minh để tăng độ bền của Blue
@@ -283,7 +234,7 @@ python train_adversarial.py
 
 ---
 
-### 5️⃣ Thống kê & Kiểm định
+### Thống kê & Kiểm định
 
 ```bash
 # Thí nghiệm với nhiều random seed
@@ -301,7 +252,7 @@ python evaluate_robustness.py
 
 ---
 
-## 🧠 Cơ chế LSTM + Investigate
+## Cơ chế LSTM + Investigate
 
 Đây là cơ chế cốt lõi giúp RPPO vượt trội so với PPO thông thường:
 
@@ -325,7 +276,7 @@ MLP chỉ thấy quan sát bước hiện tại, không thể liên kết *"tôi
 
 ---
 
-## 💰 Reward Function
+## Reward Function
 
 | Sự kiện | Reward | Lý do thiết kế |
 |---------|:------:|----------------|
@@ -344,7 +295,7 @@ MLP chỉ thấy quan sát bước hiện tại, không thể liên kết *"tôi
 
 ---
 
-## 🔧 Cấu hình (`config.py`)
+## Cấu hình (`config.py`)
 
 Toàn bộ thông số được tập trung tại `config.py` — chỉnh sửa tại đây để thay đổi hành vi của hệ thống.
 
@@ -375,7 +326,7 @@ Toàn bộ thông số được tập trung tại `config.py` — chỉnh sửa 
 
 ---
 
-## 📊 Kết quả thực nghiệm
+## Kết quả thực nghiệm
 
 ### RPPO vs Static Playbook (50 episodes)
 
@@ -396,7 +347,7 @@ Toàn bộ thông số được tập trung tại `config.py` — chỉnh sửa 
 
 ---
 
-## 🗂️ Mô tả các script
+## Mô tả các script
 
 | Script | Công dụng |
 |--------|-----------|
@@ -410,7 +361,6 @@ Toàn bộ thông số được tập trung tại `config.py` — chỉnh sửa 
 | `bonferroni_correction.py` | Kiểm định thống kê nhiều giả thuyết |
 | `visualize.py` | Sinh các biểu đồ báo cáo |
 | `decompose_rewards.py` | Phân tích từng thành phần reward |
-| `gnn_model.py` | Graph Neural Network (thí nghiệm topology-aware) |
 
 ---
 

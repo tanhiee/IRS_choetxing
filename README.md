@@ -1,4 +1,4 @@
-# 🛡️ IRS-RL: Autonomous Incident Response with RecurrentPPO
+#  IRS-RL: Autonomous Incident Response with RecurrentPPO
 
 <p align="center">
   <img src="results/dashboard.png" alt="IRS-RL Dashboard" width="800"/>
@@ -16,7 +16,7 @@
 
 ---
 
-## 📋 Mục lục
+## Mục lục
 
 - [Tổng quan](#-tổng-quan)
 - [Kiến trúc hệ thống](#-kiến-trúc-hệ-thống)
@@ -31,7 +31,7 @@
 
 ---
 
-## 🎯 Tổng quan
+## Tổng quan
 
 Dự án xây dựng một **Blue Team Agent** tự động học cách ứng phó với sự cố mạng bằng Reinforcement Learning. Đây là bài toán **POMDP** (Partially Observable Markov Decision Process) vì:
 
@@ -336,14 +336,6 @@ Toàn bộ thông số được tập trung tại `config.py` — chỉnh sửa 
 | Clean Finish % | **94%** | 72% |
 | Time to Recovery (bước) | **18.3** | 31.7 |
 | Wasted Restores / episode | **0.4** | 2.1 |
-
-<p align="center">
-  <img src="results/training_curve_v2.png" alt="Training Curve" width="700"/>
-</p>
-
-<p align="center">
-  <img src="results/ttr_comparison.png" alt="Time to Recovery Comparison" width="500"/>
-</p>
 
 ---
 
